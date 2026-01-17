@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="color-scheme" content="dark light">
+    <meta name="color-scheme" content="dark">
     <title>Поддержать проект | Пожертвование через СБП</title>
     <meta name="description" content="Сделайте пожертвование для поддержки нашего проекта через систему быстрых платежей Сбербанка">
     <meta name="keywords" content="донат, пожертвование, сбербанк, сбп, система быстрых платежей">
@@ -14,25 +14,28 @@
     <meta property="og:description" content="Сделайте пожертвование для поддержки нашего проекта">
     <meta property="og:type" content="website">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Exo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Animated light rays -->
-    <div class="light-ray ray-1"></div>
-    <div class="light-ray ray-2"></div>
-    <div class="light-ray ray-3"></div>
-    <div class="light-ray ray-4"></div>
-    <div class="light-ray ray-5"></div>
+    <div class="neon-ray ray-1"></div>
+    <div class="neon-ray ray-2"></div>
+    <div class="neon-ray ray-3"></div>
+    <div class="neon-ray ray-4"></div>
+    <div class="neon-ray ray-5"></div>
 
     <!-- Decorative elements for parallax -->
-    <div class="decoration" id="decoration1"></div>
-    <div class="decoration" id="decoration2"></div>
-    <div class="decoration" id="decoration3"></div>
+    <div class="neon-decoration" id="neon-deco1"></div>
+    <div class="neon-decoration" id="neon-deco2"></div>
+    <div class="neon-decoration" id="neon-deco3"></div>
 
     <!-- Network background -->
-    <canvas id="network-bg"></canvas>
+    <canvas id="neon-network"></canvas>
 
-    <header class="glass-header slide-up">
+    <header class="neon-header slide-up">
         <div class="container">
             <h1 class="logo">Поддержать проект</h1>
         </div>
@@ -40,16 +43,16 @@
 
     <main class="main-content">
         <section class="donation-section" id="donation">
-            <div class="glass-card qr-container scale-in" id="qr-rotator">
+            <div class="neon-card neon-container blur-in" id="neon-rotator">
                 <h2 class="slide-up">Отблагодарить нас</h2>
                 <p class="slide-up">Отсканируйте QR-код для пожертвования через СБП</p>
                 <div class="qr-wrapper">
                     <img src="https://raw.githubusercontent.com/nuppi133534-stack/domnateqr/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-01-17%20172210.png" alt="QR-код для пожертвований СБП" class="qr-placeholder" />
                 </div>
-                <button class="donate-button slide-up">Сделать пожертвование</button>
+                <button class="neon-button slide-up">Сделать пожертвование</button>
             </div>
 
-            <div class="glass-card info-card slide-up">
+            <div class="neon-card info-card slide-up">
                 <h3 class="slide-up">Как это работает</h3>
                 <ul>
                     <li class="slide-up">✓ Платежи через Систему Быстрых Платежей Сбербанка</li>
@@ -61,14 +64,14 @@
         </section>
 
         <section class="about-section" id="about">
-            <div class="glass-card slide-up">
+            <div class="neon-card slide-up">
                 <h2 class="slide-up">О проекте</h2>
                 <p class="slide-up">Мы стремимся к созданию качественного контента и услуг для нашего сообщества. Ваша поддержка помогает нам развиваться и улучшать наши продукты.</p>
             </div>
         </section>
     </main>
 
-    <footer class="glass-footer slide-up">
+    <footer class="neon-footer slide-up">
         <div class="container">
             <p>&copy; 2026 Поддержать проект. Все права защищены.</p>
         </div>

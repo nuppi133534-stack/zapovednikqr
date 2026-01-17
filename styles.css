@@ -6,91 +6,22 @@
 }
 
 body {
-    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-family: 'Inter', 'Exo 2', system-ui, sans-serif;
     line-height: 1.6;
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    background-attachment: fixed;
-    /* Dynamic gradient animation */
-    animation: gradientShift 7s infinite alternate;
-}
-
-/* Default light theme colors */
-body {
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
     color: #ffffff;
+    color-scheme: dark;
 }
 
-/* Dark theme adaptation */
-@media (prefers-color-scheme: dark) {
-    body {
-        color: #ffffff;
-        background: linear-gradient(135deg, #2c3e50 0%, #000000 100%);
-    }
-
-    .glass-effect {
-        background: rgba(30, 30, 30, 0.7) !important;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .qr-wrapper {
-        background: rgba(255, 255, 255, 0.1) !important;
-    }
-}
-
-/* Light theme adaptation */
-@media (prefers-color-scheme: light) {
-    body {
-        color: #333333;
-        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-    }
-
-    .glass-effect {
-        background: rgba(255, 255, 255, 0.7) !important;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    h1, h2, h3, p, li, .donate-button {
-        color: #333333 !important;
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    }
-
-    .qr-wrapper {
-        background: rgba(0, 0, 0, 0.1) !important;
-    }
-
-    .logo {
-        background: linear-gradient(45deg, #333333, #666666);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-shadow: none;
-    }
-
-    .qr-container h2 {
-        background: linear-gradient(45deg, #333333, #666666);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-shadow: none;
-    }
-
-    .about-section .glass-card h2 {
-        background: linear-gradient(45deg, #333333, #666666);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-shadow: none;
-    }
-}
-
-@keyframes gradientShift {
-    0% { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-    25% { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
-    50% { background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%); }
-    75% { background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%); }
-    100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+/* Neon theme colors */
+:root {
+    --neon-blue: #00f3ff;
+    --neon-pink: #ff00c8;
+    --neon-purple: #b967ff;
+    --neon-glow: 0 0 8px var(--neon-blue), 0 0 16px var(--neon-blue), 0 0 24px var(--neon-blue);
 }
 
 /* Container */
@@ -100,22 +31,22 @@ body {
     padding: 0 20px;
 }
 
-/* Liquid Glass Effect */
-.glass-effect {
-    background: rgba(255, 255, 255, 0.15);
+/* Neon Glass Effect */
+.neon-glass {
+    background: rgba(15, 12, 41, 0.3);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 243, 255, 0.2);
     box-shadow:
-        inset 0 0 20px rgba(255, 255, 255, 0.1),
-        0 8px 32px rgba(0, 0, 0, 0.2);
+        inset 0 0 20px rgba(0, 243, 255, 0.1),
+        0 8px 32px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     transition: all 0.4s ease-out;
     will-change: transform, opacity;
 }
 
 /* Header */
-.glass-header {
+.neon-header {
     padding: 20px 0;
     position: sticky;
     top: 0;
@@ -123,7 +54,7 @@ body {
     will-change: transform;
 }
 
-.glass-header .container {
+.neon-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -132,11 +63,8 @@ body {
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    background: linear-gradient(45deg, #ffffff, #e0e0ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.7);
     will-change: transform;
 }
 
@@ -161,22 +89,23 @@ body {
     }
 }
 
-/* Glass Cards */
-.glass-card {
-    @extend .glass-effect;
+/* Neon Cards */
+.neon-card {
+    @extend .neon-glass;
     padding: 30px;
     transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
     will-change: transform, opacity;
 }
 
-.glass-card:hover {
+.neon-card:hover {
     transform: translateY(-5px);
     box-shadow:
-        inset 0 0 25px rgba(255, 255, 255, 0.15),
-        0 12px 40px rgba(0, 0, 0, 0.3);
+        inset 0 0 25px rgba(0, 243, 255, 0.15),
+        0 12px 40px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(0, 243, 255, 0.3);
 }
 
-.qr-container {
+.neon-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -184,34 +113,31 @@ body {
     will-change: transform;
 }
 
-.qr-container h2 {
+.neon-container h2 {
     margin-bottom: 10px;
     font-size: 1.8rem;
-    background: linear-gradient(45deg, #ffffff, #f0f0ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.7);
     will-change: transform;
 }
 
-.qr-container p {
+.neon-container p {
     margin-bottom: 20px;
     opacity: 0.9;
-    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.7);
     will-change: transform;
 }
 
 .qr-wrapper {
     margin: 20px 0;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 243, 255, 0.1);
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(20px);
-    box-shadow: inset 0 0 15px rgba(255,255,255,0.3);
+    box-shadow: 0 0 20px #00f3ff, inset 0 0 10px #00f3ff;
     transition: all 0.4s ease-out;
     will-change: transform, box-shadow;
 }
@@ -219,8 +145,9 @@ body {
 .qr-wrapper:hover {
     transform: scale(1.05);
     box-shadow:
-        0 0 20px #fff,
-        inset 0 0 15px rgba(255,255,255,0.3);
+        0 0 30px #00f3ff,
+        0 0 40px #ff00c8,
+        inset 0 0 15px #00f3ff;
 }
 
 .qr-placeholder {
@@ -256,18 +183,18 @@ body {
 
 .qr-wrapper:hover .qr-placeholder::after {
     opacity: 1;
-    animation: pulse 1.5s infinite;
+    animation: neon-pulse 1.5s infinite;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+@keyframes neon-pulse {
+    0% { transform: scale(1); box-shadow: 0 0 10px #00f3ff; }
+    50% { transform: scale(1.05); box-shadow: 0 0 20px #00f3ff, 0 0 30px #ff00c8; }
+    100% { transform: scale(1); box-shadow: 0 0 10px #00f3ff; }
 }
 
-/* Buttons */
-.donate-button {
-    @extend .glass-effect;
+/* Neon Buttons */
+.neon-button {
+    @extend .neon-glass;
     padding: 15px 30px;
     border: none;
     border-radius: 50px;
@@ -276,14 +203,16 @@ body {
     cursor: pointer;
     transition: all 0.4s ease-out;
     margin-top: 20px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 243, 255, 0.2);
     color: white;
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(0, 243, 255, 0.5);
+    box-shadow: inset 0 0 10px rgba(0, 243, 255, 0.3);
     will-change: transform, box-shadow;
 }
 
-.donate-button::before {
+.neon-button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -293,25 +222,27 @@ body {
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(255, 255, 255, 0.4),
+        rgba(0, 243, 255, 0.6),
         transparent
     );
     transition: 0.5s;
 }
 
-.donate-button:hover {
+.neon-button:hover {
     transform: scale(1.05);
     box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.3),
-        inset 0 0 20px rgba(255, 255, 255, 0.2);
-    background: linear-gradient(45deg, #667eea, #764ba2);
+        inset 0 0 20px rgba(0, 243, 255, 0.4),
+        0 0 20px rgba(0, 243, 255, 0.5);
+    background: linear-gradient(45deg, #00f3ff, #b967ff);
+    border: 1px solid rgba(255, 0, 200, 0.7);
 }
 
-.donate-button:hover::before {
+.neon-button:hover::before {
     left: 100%;
 }
 
-.donate-button:active {
+.neon-button:active {
     transform: scale(0.95);
 }
 
@@ -322,10 +253,11 @@ body {
 
 .info-card li {
     padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 243, 255, 0.2);
     display: flex;
     align-items: center;
-    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.7);
     will-change: transform;
 }
 
@@ -336,7 +268,7 @@ body {
 .info-card li::before {
     content: '✓';
     margin-right: 10px;
-    color: #4ade80;
+    color: #00f3ff;
     font-weight: bold;
 }
 
@@ -344,70 +276,72 @@ body {
     margin-top: 40px;
 }
 
-.about-section .glass-card h2 {
+.about-section .neon-card h2 {
     margin-bottom: 20px;
     font-size: 1.8rem;
-    background: linear-gradient(45deg, #ffffff, #e0e0ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.7);
     will-change: transform;
 }
 
-.about-section .glass-card p {
-    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+.about-section .neon-card p {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.7);
     will-change: transform;
 }
 
 /* Footer */
-.glass-footer {
+.neon-footer {
     padding: 30px 0;
     text-align: center;
     margin-top: auto;
 }
 
-.glass-footer p {
+.neon-footer p {
     opacity: 0.8;
-    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.7);
 }
 
 /* Decorative Elements for Parallax */
-.decoration {
+.neon-decoration {
     position: fixed;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 243, 255, 0.1) 0%, transparent 70%);
     z-index: -1;
     pointer-events: none;
     will-change: transform;
 }
 
-#decoration1 {
+#neon-deco1 {
     width: 300px;
     height: 300px;
     top: 10%;
     left: 5%;
     opacity: 0.3;
+    box-shadow: 0 0 50px rgba(0, 243, 255, 0.3);
 }
 
-#decoration2 {
+#neon-deco2 {
     width: 200px;
     height: 200px;
     bottom: 15%;
     right: 10%;
     opacity: 0.2;
+    box-shadow: 0 0 50px rgba(255, 0, 200, 0.3);
 }
 
-#decoration3 {
+#neon-deco3 {
     width: 150px;
     height: 150px;
     top: 40%;
     right: 20%;
     opacity: 0.15;
+    box-shadow: 0 0 50px rgba(185, 103, 255, 0.3);
 }
 
 /* Animated light rays */
-.light-ray {
+.neon-ray {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -421,31 +355,31 @@ body {
 }
 
 .ray-1 {
-    background: radial-gradient(ellipse at center, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 100%);
+    background: radial-gradient(ellipse at center, rgba(0,243,255,0) 0%, rgba(0,243,255,0.1) 100%);
     transform: rotate(0deg);
     animation: rotateRay 20s linear infinite, pulseRay 4s ease-in-out infinite;
 }
 
 .ray-2 {
-    background: radial-gradient(ellipse at center, rgba(255,255,255,0) 0%, rgba(200,200,255,0.1) 100%);
+    background: radial-gradient(ellipse at center, rgba(0,243,255,0) 0%, rgba(255,0,200,0.1) 100%);
     transform: rotate(72deg);
     animation: rotateRay 25s linear infinite, pulseRay 5s ease-in-out infinite;
 }
 
 .ray-3 {
-    background: radial-gradient(ellipse at center, rgba(255,255,255,0) 0%, rgba(150,150,255,0.1) 100%);
+    background: radial-gradient(ellipse at center, rgba(0,243,255,0) 0%, rgba(185,103,255,0.1) 100%);
     transform: rotate(144deg);
     animation: rotateRay 30s linear infinite, pulseRay 6s ease-in-out infinite;
 }
 
 .ray-4 {
-    background: radial-gradient(ellipse at center, rgba(255,255,255,0) 0%, rgba(100,100,255,0.1) 100%);
+    background: radial-gradient(ellipse at center, rgba(0,243,255,0) 0%, rgba(0,200,255,0.1) 100%);
     transform: rotate(216deg);
     animation: rotateRay 22s linear infinite, pulseRay 4.5s ease-in-out infinite;
 }
 
 .ray-5 {
-    background: radial-gradient(ellipse at center, rgba(255,255,255,0) 0%, rgba(50,50,255,0.1) 100%);
+    background: radial-gradient(ellipse at center, rgba(0,243,255,0) 0%, rgba(255,100,200,0.1) 100%);
     transform: rotate(288deg);
     animation: rotateRay 28s linear infinite, pulseRay 5.5s ease-in-out infinite;
 }
@@ -461,7 +395,7 @@ body {
 }
 
 /* Network background */
-#network-bg {
+#neon-network {
     position: fixed;
     top: 0;
     left: 0;
@@ -496,15 +430,17 @@ body {
     transform: translateY(0);
 }
 
-.scale-in {
+.blur-in {
     opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    will-change: transform, opacity;
+    filter: blur(10px);
+    transform: scale(0.9);
+    transition: opacity 0.6s ease, filter 0.6s ease, transform 0.6s ease;
+    will-change: opacity, filter, transform;
 }
 
-.scale-in.appear {
+.blur-in.appear {
     opacity: 1;
+    filter: blur(0);
     transform: scale(1);
 }
 
@@ -519,11 +455,11 @@ body {
         gap: 25px;
     }
 
-    .glass-card {
+    .neon-card {
         padding: 20px;
     }
 
-    .qr-container h2 {
+    .neon-container h2 {
         font-size: 1.5rem;
     }
 
@@ -535,6 +471,21 @@ body {
     .logo {
         font-size: 1.5rem;
     }
+
+    /* Text sizing for mobile */
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .neon-container h2,
+    .about-section .neon-card h2 {
+        font-size: 1.6rem;
+    }
+
+    .neon-container p {
+        font-size: 1.1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -543,163 +494,54 @@ body {
         height: 160px;
     }
 
-    .donate-button {
+    .neon-button {
         padding: 12px 25px;
         font-size: 1rem;
     }
 
-    .glass-card {
+    .neon-card {
         padding: 15px;
     }
-}
 
-/* Fallback for browsers that don't support backdrop-filter */
-@supports not (backdrop-filter: blur(20px)) {
-    .glass-effect {
-        background: rgba(0, 0, 0, 0.7) !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    body {
+        font-size: 16px;
     }
 }
 
-/* Additional fallback for mobile devices with reduced motion */
+/* Reduced motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
-    body {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .neon-ray {
         animation: none;
     }
 
-    .glass-effect {
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
+    .neon-decoration {
+        animation: none;
     }
 
-    .light-ray {
-        display: none;
+    .blur-in,
+    .fade-in,
+    .slide-up {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
     }
-
-    .decoration {
-        display: none;
-    }
-
-    .qr-wrapper {
-        background: rgba(0, 0, 0, 0.5);
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-}
-
-/* Better fallback for older mobile browsers */
-@supports (-webkit-appearance: none) and (stroke-color: transparent) {
-    body {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
-
-    .glass-effect {
-        background: rgba(0, 0, 0, 0.75);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-}
-
-/* Ensure text remains readable on all backgrounds */
-h1, h2, h3, p, li, .donate-button {
-    color: white !important;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-}
-
-/* Additional contrast for mobile devices */
-@media screen and (max-width: 768px) {
-    /* Dark theme adaptation for mobile */
-    @media (prefers-color-scheme: dark) {
-        .glass-card {
-            background: rgba(30, 30, 30, 0.9) !important;
-            border: 1px solid rgba(255, 255, 255, 0.3) !important;
-            box-shadow:
-                inset 0 0 10px rgba(0, 0, 0, 0.5),
-                0 8px 32px rgba(0, 0, 0, 0.4) !important;
-        }
-
-        .glass-header, .glass-footer {
-            background: rgba(20, 20, 20, 0.95) !important;
-        }
-
-        body {
-            background: linear-gradient(135deg, #2c3e50 0%, #000000 100%) !important;
-            animation: none !important;
-        }
-
-        .qr-wrapper {
-            background: rgba(255, 255, 255, 0.15) !important;
-            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3) !important;
-        }
-    }
-
-    /* Light theme adaptation for mobile */
-    @media (prefers-color-scheme: light) {
-        .glass-card {
-            background: rgba(255, 255, 255, 0.9) !important;
-            border: 1px solid rgba(0, 0, 0, 0.1) !important;
-            box-shadow:
-                inset 0 0 10px rgba(0, 0, 0, 0.1),
-                0 8px 32px rgba(0, 0, 0, 0.2) !important;
-        }
-
-        .glass-header, .glass-footer {
-            background: rgba(255, 255, 255, 0.95) !important;
-        }
-
-        body {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%) !important;
-            animation: none !important;
-        }
-
-        .qr-wrapper {
-            background: rgba(0, 0, 0, 0.1) !important;
-            box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.3) !important;
-        }
-
-        h1, h2, h3, p, li, .donate-button {
-            color: #333333 !important;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-        }
-    }
-
-    .light-ray {
-        display: none !important;
-    }
-
-    .decoration {
-        display: none !important;
-    }
-
-    /* Improve text readability on mobile */
-    h1, h2, h3, p, li, .donate-button {
-        text-shadow: 0 0 15px rgba(0, 0, 0, 0.9) !important;
-    }
-
-    .qr-container h2 {
-        font-size: 1.6rem !important;
-    }
-
-    .qr-container p {
-        font-size: 1.1rem !important;
-    }
-}
-
-/* Improve QR contrast */
-.qr-wrapper {
-    background: rgba(255, 255, 255, 0.2) !important;
-    border: 2px solid rgba(255, 255, 255, 0.3) !important;
 }
 
 /* 3D Rotation Effect */
-#qr-rotator {
+#neon-rotator {
     perspective: 1000px;
     transition: transform 0.1s ease-out;
     will-change: transform;
 }
 
-#qr-rotator.rotating {
+#neon-rotator.rotating {
     transform-style: preserve-3d;
 }
