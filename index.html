@@ -3,80 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="color-scheme" content="dark">
-    <title>Поддержать проект | Пожертвование через СБП</title>
-    <meta name="description" content="Сделайте пожертвование для поддержки нашего проекта через систему быстрых платежей Сбербанка">
-    <meta name="keywords" content="донат, пожертвование, сбербанк, сбп, система быстрых платежей">
-    <meta name="author" content="Donation Project">
+    <title>ПОЛИГОН - Спасаем Природу Вместе</title>
 
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Поддержать проект">
-    <meta property="og:description" content="Сделайте пожертвование для поддержки нашего проекта">
+    <!-- Метатеги для мобильных устройств -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="ПОЛИГОН">
+    <meta name="theme-color" content="#0d2b1a">
+    
+    <!-- SEO и Open Graph метатеги -->
+    <meta name="description" content="Поддержите наш экологический проект - восстановление лесов, очистка рек, защита животных. Отсканируйте QR-код для быстрого перевода через СБП.">
+    <meta name="keywords" content="экология, донат, пожертвование, природа, СБП, Сбербанк, Тинькофф, Альфа-Банк">
+    <meta name="author" content="Polygon Nature Project">
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-nature-donation-site.com/">
+    <meta property="og:title" content="ПОЛИГОН - Спасаем Природу Вместе">
+    <meta property="og:description" content="Поддержите наш экологический проект - восстановление лесов, очистка рек, защита животных. Отсканируйте QR-код для быстрого перевода через СБП.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/nuppi133534-stack/zapovednikqr/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-01-17%20172210.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Exo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-nature-donation-site.com/">
+    <meta property="twitter:title" content="ПОЛИГОН - Спасаем Природу Вместе">
+    <meta property="twitter:description" content="Поддержите наш экологический проект - восстановление лесов, очистка рек, защита животных. Отсканируйте QR-код для быстрого перевода через СБП.">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/nuppi133534-stack/zapovednikqr/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-01-17%20172210.png">
+    
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Animated light rays -->
-    <div class="neon-ray ray-1"></div>
-    <div class="neon-ray ray-2"></div>
-    <div class="neon-ray ray-3"></div>
-    <div class="neon-ray ray-4"></div>
-    <div class="neon-ray ray-5"></div>
-
-    <!-- Decorative elements for parallax -->
-    <div class="neon-decoration" id="neon-deco1"></div>
-    <div class="neon-decoration" id="neon-deco2"></div>
-    <div class="neon-decoration" id="neon-deco3"></div>
-
-    <!-- Network background -->
-    <canvas id="neon-network"></canvas>
-
-    <header class="neon-header slide-up">
-        <div class="container">
-            <h1 class="logo">Поддержать проект</h1>
-        </div>
-    </header>
-
-    <main class="main-content">
-        <section class="donation-section" id="donation">
-            <div class="neon-card neon-container blur-in" id="neon-rotator">
-                <h2 class="slide-up">Отблагодарить нас</h2>
-                <p class="slide-up">Отсканируйте QR-код для пожертвования через СБП</p>
-                <div class="qr-wrapper">
-                    <img src="https://raw.githubusercontent.com/nuppi133534-stack/domnateqr/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-01-17%20172210.png" alt="QR-код для пожертвований СБП" class="qr-placeholder" />
+    <!-- Лоадер с драматичным вступлением -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <h1 class="loader-text" id="polygonText">ПОЛИГОН</h1>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
                 </div>
-                <button class="neon-button slide-up">Сделать пожертвование</button>
+                <div class="progress-percent" id="progressText">0%</div>
             </div>
+        </div>
+    </div>
 
-            <div class="neon-card info-card slide-up">
-                <h3 class="slide-up">Как это работает</h3>
-                <ul>
-                    <li class="slide-up">✓ Платежи через Систему Быстрых Платежей Сбербанка</li>
-                    <li class="slide-up">✓ Безопасно и надежно</li>
-                    <li class="slide-up">✓ Мгновенные переводы</li>
-                    <li class="slide-up">✓ Поддержка проекта</li>
-                </ul>
-            </div>
-        </section>
+    <!-- Контейнер для частиц -->
+    <div id="particles-js"></div>
 
-        <section class="about-section" id="about">
-            <div class="neon-card slide-up">
-                <h2 class="slide-up">О проекте</h2>
-                <p class="slide-up">Мы стремимся к созданию качественного контента и услуг для нашего сообщества. Ваша поддержка помогает нам развиваться и улучшать наши продукты.</p>
+    <!-- Основной контент -->
+    <main class="main-container">
+        <section class="hero-section">
+            <div class="content-wrapper">
+                <h1 class="main-title scroll-animate">Поддержите Наш Проект — Спасаем Природу Вместе</h1>
+
+                <p class="subtitle scroll-animate">Ваше пожертвование поможет нам восстанавливать леса, очищать реки и защищать редкие виды животных. Каждый рубль — шаг к чистому будущему</p>
+
+                <div class="qr-card scroll-animate" id="qrCard">
+                    <div class="qr-container">
+                        <img src="https://raw.githubusercontent.com/nuppi133534-stack/zapovednikqr/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-01-17%20172210.png" alt="QR-код для перевода" class="qr-code" id="qrCode">
+                    </div>
+
+                    <p class="qr-description">Отсканируйте QR-код в любом банковском приложении — оплата через Систему Быстрых Платежей (СБП).</p>
+                </div>
             </div>
         </section>
     </main>
-
-    <footer class="neon-footer slide-up">
-        <div class="container">
-            <p>&copy; 2026 Поддержать проект. Все права защищены.</p>
-        </div>
-    </footer>
-
+    
+    <!-- Подключение библиотек через CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
